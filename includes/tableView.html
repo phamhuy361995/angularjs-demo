@@ -1,0 +1,32 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th ng-click="sortData('name')" width="20%">
+                Name <i class="fa" ng-class="getSortClass('name')"></i>
+            </th>
+            <th ng-click="sortData('birthday')" width="20%">
+                Date of Birth <i class="fa" ng-class="getSortClass('birthday')"></i>
+            </th>
+            <th ng-click="sortData('salary')" ng-hide="hideSalary" width="20%">
+                Salary <i class="fa" ng-class="getSortClass('salary')"></i>
+            </th>
+            <th ng-show="hideSalary" width="20%">
+                Salary <i class="fa" ng-class="getSortClass('salary')"></i>
+            </th>
+            <th ng-click="sortData('gender')">
+                Gender <i class="fa" ng-class="getSortClass('gender')"></i>
+            </th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees| limitTo:limitRow| orderBy:sortColumn:reverse| filter:search">
+            <td>{{employee.name | uppercase}}</td>
+            <td>{{employee.birthday | date:"dd/MM/yyyy" }}</td>
+            <td ng-hide="hideSalary">{{employee.salary | currency:'VNĐ '}}</td>
+            <td ng-show="hideSalary">********</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.status | status}}</td>
+        </tr>
+    </tbody>
+</table>

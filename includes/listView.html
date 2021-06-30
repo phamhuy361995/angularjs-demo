@@ -1,0 +1,10 @@
+<ul>
+    <li ng-repeat="employee in employees| limitTo:limitRow| orderBy:sortColumn:reverse| filter:search">
+        <p>Name: {{employee.name | uppercase}}</p>
+        <p>Birthday: {{employee.birthday | date:"dd/MM/yyyy" }}</p>
+        <p ng-hide="hideSalary">Salary: {{employee.salary | currency:'VNĐ '}}</p>
+        <p ng-show="hideSalary">Salary: ********</p>
+        <p>Gender: {{employee.gender}}</p>
+        <p>Status: {{employee.status | status}}</p>
+    </li>
+</ul>

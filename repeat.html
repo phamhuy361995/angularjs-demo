@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-repeat</title>
+    <script src="asset/angular.min.js"></script>
+    <script src="asset/js/repeat.js"></script>
+</head>
+<body ng-app='appRep'>
+    <div ng-controller="repeatController">
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Username</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                    <td>Address</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.username }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.phone }}</td>
+                    <td>
+                        <p ng-init="add = employee.address">
+                            <span>{{ add.street }}, </span>
+                            <span>{{ add.suite }}, </span>
+                            <span>{{ add.city }}.</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

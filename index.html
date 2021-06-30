@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="asset/angular.min.js"></script>
+    <script src="asset/js/app.js"></script>
+    <script src="asset/js/stringService.js"></script>
+</head>
+<body>
+    <div ng-app="appAng">
+        <div ng-controller="myController">
+            <!-- <input type="text" ng-model="name"/>
+            <button ng-click="changeText()">Change</button>
+            <br/> -->
+            <h1>{{ name }}</h1>
+            <div ng-controller="rootTest">
+                <h1>{{ name }}</h1>
+            </div>
+
+            Input string: <input type="text" ng-model="string">
+            
+            <button ng-click="tranform(string)">Tranform</button>
+            <p>Output string: {{ output }}</p>
+        </div>
+    </div>
+</body>
+</html>
